@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "description": "Development tools for linting and testing XSLT.",
+  "devDependencies": {
+    "@maxonfjvipon/xslint": "^0.0.14"
+  },
+  "scripts": {
+    "test": "xslint --max-warnings=0"
+  }
+}

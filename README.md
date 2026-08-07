@@ -20,6 +20,7 @@ with similar tastes.
 
 - [Golden Master Testing](https://.wikipedia.org/wiki/Characterization_test)
   of transformation results with multiple XSLT processors.
+- Validation with [xslint](https://github.com/xslint/xslint).
 - Validation against [ndw RELAX NG
   grammars for XSLT stylesheets](https://github.com/ndw/xslt-relax-ng).
 

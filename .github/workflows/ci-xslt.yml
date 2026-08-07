@@ -33,10 +33,22 @@ jobs:
       with:
         persist-credentials: false
 
+    - name: Install npm test dependencies
+      run: |
+        npm config set allow-git=none
+        npm config set ignore-scripts=true
+        npm install --strict-peer-deps
+
     - name: Install apt test dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y jing libsaxon-java libxml2-utils trang xalan
+
+    - name: Lint with xslint
+      # Note: xslint/xslint-action just calls xslint via npx
+      # https://github.com/xslint/xslint-action/blob/0.0.9/index.js#L23
+      # Do so directly for simplicity, version control, and to avoid a dep.
+      run: npx @maxonfjvipon/xslint --max-warnings=0
 
     - name: Schema validate XSLT files
       run: |
