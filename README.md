@@ -23,6 +23,7 @@ with similar tastes.
 - Validation with [xslint](https://github.com/xslint/xslint).
 - Validation against [ndw RELAX NG
   grammars for XSLT stylesheets](https://github.com/ndw/xslt-relax-ng).
+- Formatting with [Prettier for XML](https://github.com/prettier/plugin-xml).
 
 
 ## Usage

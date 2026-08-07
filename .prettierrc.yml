@@ -1,0 +1,9 @@
+# Prettier Configuration <https://prettier.io/docs/configuration.html>
+plugins:
+- '@prettier/plugin-xml'
+tabWidth: 4
+xmlQuoteAttributes: double
+xmlSelfClosingSpace: false
+# Note: xsl:text is always preserved.
+# See: https://github.com/prettier/plugin-xml/pull/761
+xmlWhitespaceSensitivity: ignore

@@ -63,3 +63,10 @@ jobs:
         gmake -C test -j OUTDIR="$outdir"
         echo 'Differences from expected output:'
         diff -Nru test/outputs "$outdir"
+
+    - name: Check formatting with prettier
+      run: |
+        # Use --write followed by git-diff(1) to produce a diff
+        # See https://github.com/prettier/prettier/issues/6885
+        npx prettier --write '**/*.{xsl,xslt}'
+        git diff --exit-code
