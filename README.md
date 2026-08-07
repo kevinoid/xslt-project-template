@@ -18,6 +18,8 @@ with similar tastes.
 
 ## Features
 
+- [Golden Master Testing](https://.wikipedia.org/wiki/Characterization_test)
+  of transformation results with multiple XSLT processors.
 
 ## Usage
 
