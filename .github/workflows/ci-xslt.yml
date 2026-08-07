@@ -1,0 +1,48 @@
+# GitHub Actions Workflow
+# https://docs.github.com/actions/reference/workflow-syntax-for-github-actions
+
+name: CI Testing for XSLT Files
+
+on:   # yamllint disable-line rule:truthy
+  pull_request:
+    branches-ignore:
+    - template
+    paths:
+    - '**/*.xsl'
+    - '**/*.xslt'
+  push:
+    branches-ignore:
+    - template
+    paths:
+    - '**/*.xsl'
+    - '**/*.xslt'
+    - .github/workflows/ci-xslt.yml
+  schedule:
+  # Run once a month (at 8:40 AM UTC) to check for exogenous breakage.
+  - cron: '40 8 2 * *'
+  workflow_dispatch: {}
+
+permissions: {}
+
+jobs:
+  test:
+    name: Lint, Validate, and Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
+      with:
+        persist-credentials: false
+
+    - name: Install apt test dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libsaxon-java libxml2-utils xalan
+
+    - name: Golden Master Testing
+      run: |
+        # Generate fresh outputs in different directory.
+        # Could overwrite and git-diff(1), but must be careful of ctime/mtime.
+        outdir=$(mktemp -dt)
+        gmake -C test -j OUTDIR="$outdir"
+        echo 'Differences from expected output:'
+        diff -Nru test/outputs "$outdir"
