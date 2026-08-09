@@ -40,12 +40,23 @@ MDN](https://developer.mozilla.org/docs/Web/XML/XSLT/Guides/Transforming_XML_wit
 ```
 
 Once the processing instruction has been added, browsers will show the result
-of the transformation when viewing the document.
+of the transformation when viewing the document with a few caveats:
 
-Note that [Chrome intends to deprecate and remove XSLT from the
-browser](https://developer.chrome.com/docs/web-platform/deprecating-xslt) and
-[other browser and standards bodies are discussing
-removal](https://lwn.net/Articles/1034560/).
+There are proposals to [remove XSLT from the web
+platform](https://github.com/whatwg/html/issues/11523), supported by
+[Firefox](https://github.com/whatwg/html/issues/11523#issuecomment-3149788558)
+and
+[WebKit](https://github.com/whatwg/html/issues/11523#issuecomment-3149280766),
+which have been [covered on LWN](https://lwn.net/Articles/1034560/).  This
+method may become increasingly restricted, or cease to work entirely, in the
+future.
+
+[Chrome intends to deprecate and remove XSLT from the
+browser](https://developer.chrome.com/docs/web-platform/deprecating-xslt), and
+has marked the APIs as deprecated in 143.  Although it is still supported in
+Chrome 151 (2026-08-06), it will not be forever.  See the [current
+status](https://chromestatus.com/feature/4709671889534976)).
+
 
 Also note that although `application/xhtml+xml` is the [registered media type
 for XSLT](https://www.iana.org/assignments/media-types/application/xslt+xml),
