@@ -42,39 +42,38 @@ MDN](https://developer.mozilla.org/docs/Web/XML/XSLT/Guides/Transforming_XML_wit
 Once the processing instruction has been added, browsers will show the result
 of the transformation when viewing the document with a few caveats:
 
-There are proposals to [remove XSLT from the web
-platform](https://github.com/whatwg/html/issues/11523), supported by
-[Firefox](https://github.com/whatwg/html/issues/11523#issuecomment-3149788558)
-and
-[WebKit](https://github.com/whatwg/html/issues/11523#issuecomment-3149280766),
-which have been [covered on LWN](https://lwn.net/Articles/1034560/).  This
-method may become increasingly restricted, or cease to work entirely, in the
-future.
-
-[Chrome intends to deprecate and remove XSLT from the
-browser](https://developer.chrome.com/docs/web-platform/deprecating-xslt), and
-has marked the APIs as deprecated in 143.  Although it is still supported in
-Chrome 151 (2026-08-06), it will not be forever.  See the [current
-status](https://chromestatus.com/feature/4709671889534976)).
-
-[Firefox 68](https://www.firefox.com/en-US/firefox/68.0/releasenotes/) and
-later treat `file:` URIs as unique origins ([Bug
-1500453](https://bugzilla.mozilla.org/show_bug.cgi?id=1500453) to avoid
-security risks ([Bug
-1558299](https://bugzilla.mozilla.org/show_bug.cgi?id=1558299)).  This
-[prevents `xml-stylesheet`s from loading for local
-files](https://stackoverflow.com/q/65542487).  (A `Cross-Origin Request
-Blocked` message is logged to the Browser Console.)  Although it can be worked
-around by setting [`security.fileuri.strict_origin_policy =
-false`](https://kb.mozillazine.org/Security.fileuri.strict_origin_policy), a
-more secure option is to host the files on a web server (e.g. [local testing
-server](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server)).
-
-Also note that although `application/xhtml+xml` is the [registered media type
-for XSLT](https://www.iana.org/assignments/media-types/application/xslt+xml),
-[old browser versions (circa 2011) only recognized
-`text/xsl`](https://www.w3.org/XML/2011/11/ssTests/).  Applications supporting
-these old browsers, may consider using the non-standard `text/xsl` type.
+1. There are proposals to [remove XSLT from the web
+   platform](https://github.com/whatwg/html/issues/11523), supported by
+   [Firefox](https://github.com/whatwg/html/issues/11523#issuecomment-3149788558)
+   and
+   [WebKit](https://github.com/whatwg/html/issues/11523#issuecomment-3149280766),
+   which have been [covered on LWN](https://lwn.net/Articles/1034560/).  This
+   method may become increasingly restricted, or cease to work entirely, in
+   the future.
+2. [Chrome intends to deprecate and remove XSLT from the
+   browser](https://developer.chrome.com/docs/web-platform/deprecating-xslt),
+   and has marked the APIs as deprecated in 143.  Although it is still
+   supported in Chrome 151 (2026-08-06), it will not be forever.  See the
+   [current status](https://chromestatus.com/feature/4709671889534976)).
+3. [Firefox 68](https://www.firefox.com/en-US/firefox/68.0/releasenotes/) and
+   later treat `file:` URIs as unique origins ([Bug
+   1500453](https://bugzilla.mozilla.org/show_bug.cgi?id=1500453) to avoid
+   security risks ([Bug
+   1558299](https://bugzilla.mozilla.org/show_bug.cgi?id=1558299)).  This
+   [prevents `xml-stylesheet`s from loading for local
+   files](https://stackoverflow.com/q/65542487).  (A `Cross-Origin Request
+   Blocked` message is logged to the Browser Console.)  Although it can be
+   worked around by setting [`security.fileuri.strict_origin_policy =
+   false`](https://kb.mozillazine.org/Security.fileuri.strict_origin_policy),
+   a more secure option is to host the files on a web server (e.g. [local
+   testing
+   server](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server)).
+4. Although `application/xhtml+xml` is the [registered media type for
+   XSLT](https://www.iana.org/assignments/media-types/application/xslt+xml),
+   [old browser versions (circa 2011) only recognized
+   `text/xsl`](https://www.w3.org/XML/2011/11/ssTests/).  Applications
+   supporting these old browsers, may consider using the non-standard
+   `text/xsl` type.
 
 
 ### Tools
