@@ -57,6 +57,18 @@ has marked the APIs as deprecated in 143.  Although it is still supported in
 Chrome 151 (2026-08-06), it will not be forever.  See the [current
 status](https://chromestatus.com/feature/4709671889534976)).
 
+[Firefox 68](https://www.firefox.com/en-US/firefox/68.0/releasenotes/) and
+later treat `file:` URIs as unique origins ([Bug
+1500453](https://bugzilla.mozilla.org/show_bug.cgi?id=1500453) to avoid
+security risks ([Bug
+1558299](https://bugzilla.mozilla.org/show_bug.cgi?id=1558299)).  This
+[prevents `xml-stylesheet`s from loading for local
+files](https://stackoverflow.com/q/65542487).  (A `Cross-Origin Request
+Blocked` message is logged to the Browser Console.)  Although it can be worked
+around by setting [`security.fileuri.strict_origin_policy =
+false`](https://kb.mozillazine.org/Security.fileuri.strict_origin_policy), a
+more secure option is to host the files on a web server (e.g. [local testing
+server](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server)).
 
 Also note that although `application/xhtml+xml` is the [registered media type
 for XSLT](https://www.iana.org/assignments/media-types/application/xslt+xml),
