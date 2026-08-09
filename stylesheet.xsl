@@ -15,6 +15,7 @@
 
     <xsl:template match="/">
         <!-- Add DOCTYPE.  See https://stackoverflow.com/q/3387127 -->
+        <!-- xslint-disable-next-line using-disable-output-escaping -->
         <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;
 </xsl:text>
         <html>
