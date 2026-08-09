@@ -35,7 +35,9 @@ jobs:
 
     - name: Install npm test dependencies
       run: |
-        npm config set allow-git=none
+        # allow-git was added in npm 11, which is not currently in ubuntu-latest
+        # https://github.blog/changelog/2026-02-18-npm-bulk-trusted-publishing-config-and-script-security-now-generally-available/
+        npm config set allow-git=none || true
         npm config set ignore-scripts=true
         npm install --strict-peer-deps
 
