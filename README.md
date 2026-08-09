@@ -2,7 +2,7 @@ XSLT Project Template
 =====================
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/kevinoid/xslt-project-template/ci-xslt.yml?branch=main&style=flat&label=build)](https://github.com/kevinoid/xslt-project-template/actions/workflows/ci-xslt.yml?query=branch%3Amain)
-[![XSLT Version](https://img.shields.io/badge/XSLT_Version-1.0.svg?style=flat)](https://en.wikipedia.org/wiki/XSLT#History)
+[![XSLT Version](https://img.shields.io/badge/XSLT_Version-1.0-green.svg?style=flat)](https://en.wikipedia.org/wiki/XSLT#History)
 
 A project template for [Extensible Stylesheet Language Transformation
 (XSLT)](https://wikipedia.org/wiki/XSLT) projects, representing
