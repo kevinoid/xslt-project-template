@@ -1,7 +1,7 @@
 # GitHub Actions Workflow
 # https://docs.github.com/actions/reference/workflow-syntax-for-github-actions
 
-name: CI Testing for XSLT Files
+name: CI for XSLT
 
 on:   # yamllint disable-line rule:truthy
   pull_request:
