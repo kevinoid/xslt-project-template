@@ -2,7 +2,7 @@
   "private": true,
   "description": "Development tools for linting and testing XSLT.",
   "devDependencies": {
-    "@maxonfjvipon/xslint": "^0.0.14",
+    "@maxonfjvipon/xslint": "^0.1.0",
     "@prettier/plugin-xml": "^3.4.2",
     "prettier": "^3.9.6"
   },
